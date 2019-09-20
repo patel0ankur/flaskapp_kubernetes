@@ -14,7 +14,8 @@ spec:
   template:
     metadata:
       labels:
-        service: mysql
+        app: mysql
+        tier: database
     spec:
       containers:
         - image: ankurpatel/flaskdb:latest
