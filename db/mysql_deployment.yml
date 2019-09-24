@@ -20,7 +20,7 @@ spec:
         tier: database
     spec:
       containers:
-        - image: ankurpatel/flaskdb:latest
+        - image: ankurpatel/kubedb
           name: mysql
           env:
             - name: MYSQL_ROOT_PASSWORD
