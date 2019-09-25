@@ -34,7 +34,7 @@ spec:
           volumeMounts:
             - name: mysql-pv
               mountPath: /var/lib/mysql
-            - name: mysql-host-path
+            - name: mysql-initdb
               mountPath: /root/flaskapp_kubernetes/db/
       volumes:
         - name: mysql-pv
