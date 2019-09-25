@@ -10,19 +10,19 @@ spec:
   capacity:
     storage: 5Gi
   hostPath:
-    path: /var/lib/mysql
+    path: /tmp/mysql
 
----
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  labels:
-    type: local
-  name: mysql-initdb-pv-volume
-spec:
-  accessModes:
-    - ReadWriteMany
-  capacity:
-    storage: 1Mi
-  hostPath:
-    path: /root/flaskapp_kubernetes/db/init.sql
+#---
+#apiVersion: v1
+#kind: PersistentVolume
+#metadata:
+#  labels:
+#    type: local
+#  name: mysql-initdb-pv-volume
+#spec:
+#  accessModes:
+#    - ReadWriteMany
+#  capacity:
+#    storage: 1Mi
+#  hostPath:
+#    path: /root/flaskapp_kubernetes/db/init.sql

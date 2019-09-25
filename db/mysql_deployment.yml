@@ -33,13 +33,13 @@ spec:
               name: mysql
           volumeMounts:
             - name: mysql-pv
-              mountPath: /var/lib/mysql
-            - name: mysql-initdb
-              mountPath: /root/flaskapp_kubernetes/db/
+              mountPath: /tmp/mysql
+#            - name: mysql-initdb
+#              mountPath: /root/flaskapp_kubernetes/db/
       volumes:
         - name: mysql-pv
           persistentVolumeClaim:
             claimName: mysql-pvc
-        - name: mysql-initdb
-          persistentVolumeClaim:
-            claimName: mysql-initdb-pv-claim
+#        - name: mysql-initdb
+#          persistentVolumeClaim:
+#            claimName: mysql-initdb-pv-claim
