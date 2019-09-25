@@ -35,7 +35,7 @@ spec:
             - name: mysql-pv
               mountPath: /var/lib/mysql
             - name: mysql-host-path
-              mountPath: /docker-entrypoint-initdb.d/
+              mountPath: /root/flaskapp_kubernetes/db/
       volumes:
         - name: mysql-pv
           persistentVolumeClaim:
