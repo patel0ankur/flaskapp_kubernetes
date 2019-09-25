@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: mysql
-          image: ankurpatel/kubedb
+          image: ankurpatel/kubedb:v1
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
