@@ -6,7 +6,7 @@ metadata:
   name: mysql
 
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: mysql
@@ -20,26 +20,22 @@ spec:
         tier: database
     spec:
       containers:
-        - image: ankurpatel/kubedb
-          name: mysql
+        - name: mysql
+          image: ankurpatel/kubedb
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  key: ROOT_PASSWORD
                   name: mysql-secrets
+                  key: ROOT_PASSWORD
+
           ports:
-            - containerPort: 3306
-              name: mysql
+            - name: mysql
+              containerPort: 3306
           volumeMounts:
             - name: mysql-pv
               mountPath: /tmp/mysql
-#            - name: mysql-initdb
-#              mountPath: /root/flaskapp_kubernetes/db/
       volumes:
         - name: mysql-pv
           persistentVolumeClaim:
             claimName: mysql-pvc
-#        - name: mysql-initdb
-#          persistentVolumeClaim:
-#            claimName: mysql-initdb-pv-claim
