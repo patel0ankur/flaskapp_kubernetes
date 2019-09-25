@@ -24,19 +24,22 @@ spec:
           name: mysql
           env:
             - name: MYSQL_ROOT_PASSWORD
-#              value: "root_password"
               valueFrom:
                 secretKeyRef:
                   key: ROOT_PASSWORD
                   name: mysql-secrets
-#          args: ["--default-authentication-plugin=mysql_native_password"]
           ports:
             - containerPort: 3306
               name: mysql
           volumeMounts:
-            - mountPath: /var/lib/mysql
-              name: mysql-pv
+            - name: mysql-pv
+              mountPath: /var/lib/mysql
+            - name: mysql-host-path
+              mountPath: /docker-entrypoint-initdb.d/
       volumes:
         - name: mysql-pv
           persistentVolumeClaim:
             claimName: mysql-pvc
+        - name: mysql-initdb
+          persistentVolumeClaim:
+            claimName: mysql-initdb-pv-claim
