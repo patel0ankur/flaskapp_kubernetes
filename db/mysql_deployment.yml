@@ -13,7 +13,7 @@ spec:
       tier: database
   strategy:
     type: RollingUpdate
-    maxSurge: 1
+    maxSurge: 25%
     maxUnavailable: 25%
   template:
     metadata:
@@ -39,7 +39,7 @@ spec:
               memory: 1Gi
           livenessProbe:
             exec:
-            command: ["mysqladmin", "ping"]
+              command: ["mysqladmin", "ping"]
             initialDelaySeconds: 30
             periodSeconds: 10
             timeoutSeconds: 5
