@@ -47,9 +47,9 @@ spec:
           readinessProbe:
             exec:
               command: ["mysql", "-h", "127.0.0.1", "-e", "SELECT 1"]
-          initialDelaySeconds: 5
-          periodSeconds: 2
-          timeoutSeconds: 1
+            initialDelaySeconds: 5
+            periodSeconds: 2
+            timeoutSeconds: 1
 
           volumeMounts:
             - name: mysql-pv
