@@ -2,7 +2,7 @@ from flask import Flask
 from flask_mysqldb import MySQL
 import os
 
-HOST = 'mysql'
+HOST = 'localhost'
 
 app = Flask(__name__)
 
