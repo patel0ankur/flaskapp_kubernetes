@@ -2,7 +2,7 @@ from flask import Flask
 from flask_mysqldb import MySQL
 import os
 
-HOST = '10.104.238.226'
+HOST = '172.28.1.39'
 
 app = Flask(__name__)
 
