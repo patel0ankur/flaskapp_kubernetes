@@ -1,3 +1,5 @@
+curl
+wget
 Flask
 Flask-MySQLdb
 mysql-connector
