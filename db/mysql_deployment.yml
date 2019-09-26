@@ -26,6 +26,8 @@ spec:
         - name: mysql
           image: ankurpatel/kubedb:v2
           env:
+            - name: MYSQL_HOST
+              value: mysql
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
