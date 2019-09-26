@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: flaskapp
-          image: ankurpatel/kubeapp:v3
+          image: ankurpatel/kubeapp:v4
           env:
             - name: FLASK_ENV
               value: "development"
