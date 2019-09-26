@@ -33,6 +33,7 @@ spec:
                 secretKeyRef:
                   name: mysql-secrets
                   key: ROOT_PASSWORD
+          args: ["--default-authentication-plugin=mysql_native_password"]
           ports:
             - name: mysql
               containerPort: 3306
