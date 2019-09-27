@@ -6,21 +6,31 @@ metadata:
   name: flaskapp
 
 spec:
+
+# Number of Replica
   replicas: 1
+
+# This must match the labels we set on the pod!
   selector:
     matchLabels:
       app: flaskapp
       tier: app
+
+# How do want to update the pods?
   strategy:
     type: RollingUpdate
     rollingUpdate:
       maxSurge: 25%
       maxUnavailable: 25%
+
+# This template field is a regular pod configuration
   template:
     metadata:
       labels:
         app: flaskapp
         tier: app
+
+# Pod configuration
     spec:
       containers:
         - name: flaskapp

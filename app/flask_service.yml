@@ -4,6 +4,7 @@ metadata:
   name: flaskapp
   labels:
     service: flaskapp
+
 spec:
   selector:
     app: flaskapp
