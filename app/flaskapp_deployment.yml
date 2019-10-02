@@ -35,7 +35,7 @@ spec:
       containers:
         - name: flaskapp
           image: ankurpatel/kubeapp:v1
-          env:
+          env:                                                       # Providing ENV variable to the container
             - name: FLASK_ENV
               value: "development"
             - name: MYSQL_ROOT_PASSWORD
