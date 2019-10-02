@@ -2,7 +2,7 @@ from flask import Flask
 from flask_mysqldb import MySQL
 import os
 
-HOST = os.environ.get('HOSTNAME')
+HOST = os.environ.get('MYSQL_SERVICE_HOST')
 
 app = Flask(__name__)
 
