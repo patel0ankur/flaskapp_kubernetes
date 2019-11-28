@@ -6,7 +6,7 @@ import os
 
 app = Flask(__name__)
 
-app.config['MYSQL_HOST'] = 'mysql.default.svc.cluster.local'
+app.config['MYSQL_HOST'] = 'mysql'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_ROOT_PASSWORD'] = 'root_password'
 
