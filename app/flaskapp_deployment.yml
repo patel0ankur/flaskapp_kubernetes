@@ -43,8 +43,8 @@ spec:
                 secretKeyRef:
                   name: mysql-secrets
                   key: ROOT_PASSWORD
-#            - name: MYSQL_HOST
-#              value: mysql
+            - name: MYSQL_HOST
+              value: mysql.default.svc.cluster.local
           ports:
             - name: flaskapp
               containerPort: 5000

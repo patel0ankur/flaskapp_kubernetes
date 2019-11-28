@@ -2,9 +2,9 @@ apiVersion: v1
 kind: Service
 
 metadata:
-  name: mysqlsrv
+  name: mysql
   labels:
-    service: mysqlsrv
+    service: mysql
 
 spec:
   type: ClusterIP                     # A virtual ip to access from any nodes in the cluster
