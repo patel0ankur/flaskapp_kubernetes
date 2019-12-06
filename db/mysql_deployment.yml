@@ -26,8 +26,9 @@ spec:
 # This template field is a regular pod configuration
   template:
     metadata:
-      name: mysql                                    # name of the pods
+      name: mysql
       labels:
+        name: mysql                  # name of the pods
         app: mysql
         tier: database
 
