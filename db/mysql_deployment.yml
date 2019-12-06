@@ -23,9 +23,10 @@ spec:
       maxSurge: 25%
       maxUnavailable: 25%
 
-# This template field is a regular pod configuration 
+# This template field is a regular pod configuration
   template:
     metadata:
+      name: mysql                                    # name of the pods
       labels:
         app: mysql
         tier: database

@@ -26,6 +26,7 @@ spec:
 # This template field is a regular pod configuration
   template:
     metadata:
+      name: flaskapp
       labels:
         app: flaskapp
         tier: app
@@ -38,6 +39,8 @@ spec:
           env:                                                       # Providing ENV variable to the container
             - name: FLASK_ENV
               value: "development"
+            - name: "MYSQL_USER"
+              value: "root"
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
