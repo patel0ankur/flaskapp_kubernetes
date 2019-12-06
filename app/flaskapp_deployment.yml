@@ -13,6 +13,7 @@ spec:
 # This must match the labels we set on the pod!
   selector:
     matchLabels:
+      name: flaskapp
       app: flaskapp
       tier: app
 
@@ -28,6 +29,7 @@ spec:
     metadata:
       name: flaskapp
       labels:
+        name: flaskapp
         app: flaskapp
         tier: app
 
