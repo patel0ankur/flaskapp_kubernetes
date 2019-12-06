@@ -13,7 +13,6 @@ spec:
 # This must match the labels we set on the pod!
   selector:
     matchLabels:
-      name: flaskapp
       app: flaskapp
       tier: app
 
@@ -27,9 +26,7 @@ spec:
 # This template field is a regular pod configuration
   template:
     metadata:
-      name: flaskapp
       labels:
-        name: flaskapp
         app: flaskapp
         tier: app
 
