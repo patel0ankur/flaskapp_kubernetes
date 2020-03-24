@@ -7,30 +7,29 @@ metadata:
 
 spec:
 
-# Number of Replica
   replicas: 1
 
-# This must match the labels we set on the pod!
+
   selector:
     matchLabels:
       app: mysql
       tier: database
 
-# How do want to update the pods?
+
   strategy:
     type: RollingUpdate
     rollingUpdate:
       maxSurge: 25%
       maxUnavailable: 25%
 
-# This template field is a regular pod configuration
+
   template:
     metadata:
       labels:
         app: mysql
         tier: database
 
-# Pod configuration
+
     spec:
       containers:
         - name: mysql
@@ -59,7 +58,7 @@ spec:
             - name: mysql-pv
               mountPath: /tmp/mysql
 
-# Volume configuration
+
       volumes:
         - name: mysql-pv
           persistentVolumeClaim:
