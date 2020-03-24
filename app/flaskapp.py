@@ -1,23 +1,27 @@
 from flask import Flask
-from flask_mysqldb import MySQL
+import mysql.connector
+from mysql.connector.cursor import MySQLCursor
 import os
-
-#HOST = os.environ.get('MYSQL_SERVICE_HOST')
 
 app = Flask(__name__)
 
-app.config['MYSQL_HOST'] = 'mysql'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_ROOT_PASSWORD'] = 'root_password'
+DB_Host = os.environ.get('DB_Host') or "localhost"
+DB_Database = os.environ.get('DB_Database') or "mysql"
+DB_User = os.environ.get('DB_User') or "root"
+DB_Password = os.environ.get('DB_Password') or "root_password"
 
-mysql = MySQL(app)
 
 @app.route('/')
 def users():
-    cur = mysql.connection.cursor()
-    cur.execute('''SELECT * FROM nflteams.team_colors''')
-    rv = cur.fetchall()
+    db = mysql.connector.connect(host=DB_Host, database=DB_Database, user=DB_User, password=DB_Password, auth_plugin='mysql_native_password')
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM nflteams.team_colors")
+
+    rv = cursor.fetchall()
     return str(rv)
+
+    cursor.close()
+    db.close()
 
 
 if __name__ == '__main__':

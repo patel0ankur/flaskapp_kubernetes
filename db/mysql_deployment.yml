@@ -33,7 +33,8 @@ spec:
     spec:
       containers:
         - name: mysql
-          image: ankurpatel/kubedb:v2
+          image: ankurpatel/kubedb:latest
+          imagePullPolicy: Always
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:

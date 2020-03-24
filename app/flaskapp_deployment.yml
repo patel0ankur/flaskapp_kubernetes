@@ -34,19 +34,18 @@ spec:
     spec:
       containers:
         - name: flaskapp
-          image: ankurpatel/kubeapp:v1
-          env:                                                       # Providing ENV variable to the container
-            - name: FLASK_ENV
-              value: "development"
-            - name: "MYSQL_USER"
-              value: "root"
+          image: ankurpatel/kubeapp:latest
+          imagePullPolicy: Always
+          env:
+            - name: DB_User
+              value: root
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: mysql-secrets
                   key: ROOT_PASSWORD
-            - name: MYSQL_HOST
-              value: mysql.default.svc.cluster.local
+            - name: DB_Host
+              value: mysql
           ports:
             - name: flaskapp
               containerPort: 5000
