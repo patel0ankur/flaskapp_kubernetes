@@ -1,4 +1,4 @@
-## K8s Commands and Alias
+## K8s Commands and Aliases
 
 ````
 kubectl create -f db/secret.yml
